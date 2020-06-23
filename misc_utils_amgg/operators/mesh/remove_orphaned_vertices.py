@@ -51,6 +51,8 @@ class RemoveOrphanedVertices(bpy.types.Operator):
         for target_object in context.selected_objects:
             if target_object.type != 'MESH':
                 continue
+            else:
+                meshes_edited += 1
 
             # setup bmesh
             mesh = cast(bpy.types.Mesh, target_object.data)
