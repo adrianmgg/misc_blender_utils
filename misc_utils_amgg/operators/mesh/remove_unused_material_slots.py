@@ -48,7 +48,7 @@ class RemoveUnusedMaterialSlots(bpy.types.Operator):
 
             for i in reversed(range(len(obj.material_slots))):
                 if i not in used_material_slots:
-                    obj.data.materials.pop(index=i, update_data=True)
+                    obj.data.materials.pop(index=i)
                     num_material_slots_removed += 1
 
         self.report({'INFO'}, f'Removed {num_material_slots_removed} material slots.')
